@@ -8,49 +8,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{
-      --bg:#0a0a0f;--surface:#111118;--border:#1e1e2e;
-      --purple:#7c3aed;--purple-lt:#a78bfa;
-      --text:#e2e2f0;--muted:#6b6b8a;--green:#22c55e;
-    }
-    body{
-      background:var(--bg);color:var(--text);
-      font-family:'Poppins',sans-serif;
-      min-height:100vh;display:flex;flex-direction:column;
-      align-items:center;padding:40px 16px 60px;
-    }
-    body::after{
-      content:'';position:fixed;top:-200px;left:50%;transform:translateX(-50%);
-      width:700px;height:500px;
-      background:radial-gradient(ellipse,rgba(124,58,237,.15) 0%,transparent 70%);
-      pointer-events:none;z-index:0;
-    }
-    header{
-      position:relative;z-index:1;width:100%;max-width:960px;
-      display:flex;align-items:center;gap:12px;margin-bottom:36px;
-    }
+    :root{--bg:#0a0a0f;--surface:#111118;--border:#1e1e2e;--purple:#7c3aed;--purple-lt:#a78bfa;--text:#e2e2f0;--muted:#6b6b8a;}
+    body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 16px 60px;}
+    body::after{content:'';position:fixed;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(124,58,237,.15) 0%,transparent 70%);pointer-events:none;z-index:0;}
+    header{position:relative;z-index:1;width:100%;max-width:960px;display:flex;align-items:center;gap:12px;margin-bottom:36px;}
     .logo-mark svg{width:36px;height:36px;}
     .logo-text{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:-.04em;color:#fff;}
     .logo-text span{color:var(--purple-lt);}
-    .wrap{
-      position:relative;z-index:1;width:100%;max-width:960px;
-      display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;
-    }
+    .wrap{position:relative;z-index:1;width:100%;max-width:960px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}
     .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;}
-    .tag{
-      display:inline-flex;align-items:center;gap:6px;
-      font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-      color:var(--purple-lt);background:rgba(124,58,237,.12);
-      border:1px solid rgba(124,58,237,.25);border-radius:20px;padding:4px 12px;margin-bottom:14px;
-    }
+    .tag{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--purple-lt);background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.25);border-radius:20px;padding:4px 12px;margin-bottom:14px;}
     h1{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:-.03em;color:#fff;margin-bottom:8px;line-height:1.3;}
     .desc{font-size:.83rem;color:var(--muted);line-height:1.65;margin-bottom:18px;}
     ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
     ul li{display:flex;align-items:flex-start;gap:9px;font-size:.82rem;color:#c4c4dc;}
-    ul li::before{
-      content:'';flex-shrink:0;margin-top:3px;width:14px;height:14px;border-radius:50%;
-      background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M3 7l3 3 5-5' stroke='%23a78bfa' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat rgba(124,58,237,.15);
-    }
+    ul li::before{content:'';flex-shrink:0;margin-top:3px;width:14px;height:14px;border-radius:50%;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M3 7l3 3 5-5' stroke='%23a78bfa' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat rgba(124,58,237,.15);}
     .price-label{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
     .price{font-family:'Montserrat',sans-serif;font-weight:800;font-size:2.4rem;letter-spacing:-.04em;color:#fff;line-height:1;}
     .price sup{font-size:.95rem;font-weight:600;vertical-align:super;margin-right:2px;color:var(--purple-lt);}
@@ -68,15 +40,10 @@
     .success h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1.15rem;color:#fff;}
     .success p{font-size:.83rem;color:var(--muted);line-height:1.6;max-width:280px;}
     .err{display:none;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:10px;padding:12px 16px;font-size:.81rem;color:#f87171;margin-top:14px;}
-    @media(max-width:660px){
-      .wrap{grid-template-columns:1fr;}
-      .card:last-child{order:-1;}
-      .price{font-size:1.9rem;}
-    }
+    @media(max-width:660px){.wrap{grid-template-columns:1fr;}.card:last-child{order:-1;}.price{font-size:1.9rem;}}
   </style>
 </head>
 <body>
-
 <header>
   <div class="logo-mark">
     <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -88,10 +55,8 @@
   </div>
   <div class="logo-text">Universe<span>Orbital</span></div>
 </header>
-
+ 
 <div class="wrap">
-
-  <!-- ESQUERDA -->
   <div style="display:flex;flex-direction:column;gap:24px;">
     <div class="card">
       <div class="tag">Sistema SaaS</div>
@@ -120,19 +85,15 @@
       </div>
     </div>
   </div>
-
-  <!-- DIREITA -->
+ 
   <div class="card">
     <div class="checkout-title">Finalizar pagamento</div>
-
     <div class="loading" id="loading">
       <div class="spinner"></div>
       <span>Carregando checkout seguro…</span>
     </div>
-
     <div id="mp-brick"></div>
     <div class="err" id="err"></div>
-
     <div class="success" id="success">
       <div class="success-icon">
         <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -141,69 +102,51 @@
       <p>Tudo certo! O Felipe vai entrar em contato com você diretamente pelo WhatsApp com os próximos passos. Fique atento!</p>
     </div>
   </div>
-
 </div>
-
-<script src="https://sdk.mercadopago.com/js/v2"></script>
+ 
 <script>
-  const mp = new MercadoPago('APP_USR-f768df1b-9b50-4a9e-997a-e7b342a18fcd', { locale: 'pt-BR' });
-
-  mp.bricks().create('cardPayment', 'mp-brick', {
-    initialization: { amount: 897.00 },
-    customization: {
-      visual: {
-        style: {
-          theme: 'dark',
-          customVariables: {
-            baseColor: '#7c3aed',
-            baseColorFirstVariant: '#6d28d9',
-            baseColorSecondVariant: '#5b21b6',
-            formBackgroundColor: '#111118',
-            inputBackgroundColor: '#0a0a0f',
-            inputBorderColor: '#1e1e2e',
-            inputFocusedBorderColor: '#7c3aed',
-            inputTextColor: '#e2e2f0',
-            labelTextColor: '#6b6b8a',
-            buttonTextColor: '#ffffff',
-          }
-        }
+  (function(){
+    try {
+      var _f = window.fetch.bind(window);
+      Object.defineProperty(window,'fetch',{get:function(){return _f;},set:function(v){_f=v;},configurable:true});
+    } catch(e){}
+  })();
+ 
+  function showErr(msg){var el=document.getElementById('err');el.textContent=msg;el.style.display='block';}
+ 
+  function initCheckout(){
+    var mp=new MercadoPago('APP_USR-f768df1b-9b50-4a9e-997a-e7b342a18fcd',{locale:'pt-BR'});
+    mp.bricks().create('cardPayment','mp-brick',{
+      initialization:{amount:897.00},
+      customization:{
+        visual:{style:{theme:'dark',customVariables:{baseColor:'#7c3aed',baseColorFirstVariant:'#6d28d9',baseColorSecondVariant:'#5b21b6',formBackgroundColor:'#111118',inputBackgroundColor:'#0a0a0f',inputBorderColor:'#1e1e2e',inputFocusedBorderColor:'#7c3aed',inputTextColor:'#e2e2f0',labelTextColor:'#6b6b8a',buttonTextColor:'#ffffff'}}},
+        paymentMethods:{maxInstallments:12,minInstallments:1}
       },
-      paymentMethods: { maxInstallments: 12, minInstallments: 1 }
-    },
-    callbacks: {
-      onReady: () => {
-        document.getElementById('loading').style.display = 'none';
-      },
-      onSubmit: async (cardData) => {
-        try {
-          const res = await fetch('/pagar', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(cardData)
-          });
-          const result = await res.json();
-          if (result.status === 'approved') {
-            document.getElementById('mp-brick').style.display = 'none';
-            document.getElementById('success').style.display = 'flex';
-          } else {
-            showErr('Pagamento não aprovado. Verifique os dados e tente novamente.');
-          }
-        } catch(e) {
-          showErr('Erro ao processar. Tente novamente.');
-        }
-      },
-      onError: (err) => {
-        console.error(err);
-        showErr('Erro no formulário. Recarregue a página.');
+      callbacks:{
+        onReady:function(){document.getElementById('loading').style.display='none';},
+        onSubmit:function(cardData){
+          fetch('/pagar',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(cardData)})
+          .then(function(r){return r.json();})
+          .then(function(result){
+            if(result.status==='approved'){
+              document.getElementById('mp-brick').style.display='none';
+              document.getElementById('success').style.display='flex';
+            } else {
+              showErr('Pagamento não aprovado. Verifique os dados e tente novamente.');
+            }
+          })
+          .catch(function(){showErr('Erro ao processar. Tente novamente.');});
+        },
+        onError:function(err){console.error(err);showErr('Erro no formulário. Recarregue a página.');}
       }
-    }
-  });
-
-  function showErr(msg) {
-    const el = document.getElementById('err');
-    el.textContent = msg;
-    el.style.display = 'block';
+    });
   }
+ 
+  var s=document.createElement('script');
+  s.src='https://sdk.mercadopago.com/js/v2';
+  s.onload=function(){initCheckout();};
+  s.onerror=function(){document.getElementById('loading').style.display='none';showErr('Erro ao carregar o checkout. Verifique sua conexão e recarregue.');};
+  document.head.appendChild(s);
 </script>
 </body>
 </html>
